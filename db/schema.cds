@@ -27,20 +27,20 @@ entity Business_Partner : cuid {
     is_customer:Boolean default false;
 }
 entity Store {
-    key ID: UUID;
-    store_id :String(10);
-    name         : String(100);
-    add1     : String(255);
-    add2     : String(255);
-    city         : String(100);
-    state        : Association to States;
-    PinCode      : String(10) @(assert.format: '^[1-9][0-9]{5}$');
+    key ID      : UUID;
+    store_id    : String(20);
+    name        : String(100);
+    add1        : String(300);
+    add2        : String(300);
+    city        : String(150);
+    state       : Association to States;
+    PinCode     : String(10) @(assert.format: '^[1-9][0-9]{5}$');
 }
 
 entity Product {
     key ID: UUID;
-    p_id           : String(30); 
-    name     : String(100);
+    p_id            : String(30); 
+    name            : String(100);
     imageURL        : String(300);
     costPrice       : Decimal(20, 5); 
     sellPrice       : Decimal(20, 5); 
@@ -49,9 +49,9 @@ entity Product {
 
 entity Stock {
     key ID            : UUID;
-    storeId         : Association to Store;
-    productId       : Association to Product;
-    stock_qty        : Integer;
+    storeId           : Association to Store;
+    productId         : Association to Product;
+    stock_qty         : Integer;
 }
 
 
