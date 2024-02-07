@@ -26,6 +26,35 @@ entity Business_Partner : cuid {
       @title:' is customer'
     is_customer:Boolean default false;
 }
+entity Store {
+    key ID: UUID;
+    store_id :String(10);
+    name         : String(100);
+    add1     : String(255);
+    add2     : String(255);
+    city         : String(100);
+    state        : Association to States;
+    PinCode      : String(10) @(assert.format: '^[1-9][0-9]{5}$');
+}
+
+entity Product {
+    key ID: UUID;
+    p_id           : String(20); 
+    name     : String(100);
+    imageURL        : String(255);
+    costPrice       : Decimal(15, 2); 
+    sellPrice       : Decimal(15, 2); 
+}
+
+
+entity Stock {
+    key ID            : UUID;
+    storeId         : Association to Store;
+    productId       : Association to Product;
+    stock_qty        : Integer;
+}
+
+
 @cds.persistence.skip
 entity States {
     @title:'code'
@@ -34,3 +63,33 @@ entity States {
     description:String(10);
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

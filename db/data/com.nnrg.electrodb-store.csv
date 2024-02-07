@@ -1,0 +1,3 @@
+bp_no,name,add1,add2,city,state_code,pinCode,Is_gstn_registered,Gst_num,Is_vendor,Is_customer
+BP1001,ElectroMart,123 Tech St,Suite 101,ElectroCity,STATE1,123456,true,GSTN123456789Z,true,false
+BP1002,ApplianceZone,456 Gadget Ave,,TechVille,STATE2,789012,false,,false,true
