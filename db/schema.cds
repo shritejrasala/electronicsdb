@@ -39,11 +39,11 @@ entity Store {
 
 entity Product {
     key ID: UUID;
-    p_id           : String(20); 
+    p_id           : String(30); 
     name     : String(100);
-    imageURL        : String(255);
-    costPrice       : Decimal(15, 2); 
-    sellPrice       : Decimal(15, 2); 
+    imageURL        : String(300);
+    costPrice       : Decimal(20, 5); 
+    sellPrice       : Decimal(20, 5); 
 }
 
 
